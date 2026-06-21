@@ -36,3 +36,19 @@ The downloader is reusable for any CCXT symbol and timeframe. It enables CCXT
 rate limiting, writes the required `timestamp,open,high,low,close,volume`
 columns, and resumes automatically by reading the latest timestamp already saved
 in the destination CSV.
+
+
+## Performance analysis
+
+`PerformanceAnalyzer` computes total return, annual return, annual volatility,
+Sharpe Ratio annualized with 365 trading days, maximum drawdown, win rate,
+profit factor, number of trades, average holding time, and average trade return.
+It returns metrics as a dictionary and can print a formatted performance summary.
+
+
+## Strategy comparison chart
+
+Use `export_strategy_vs_buy_and_hold` to compare the
+`DoubleMovingAverageRSIStrategy` equity curve with a buy-and-hold BTC/USDT curve.
+Both curves start from 10,000 USDT by default. The chart is saved to
+`plots/backtest.png`, and the plotted data is exported to `plots/backtest.csv`.
