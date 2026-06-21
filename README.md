@@ -52,3 +52,11 @@ Use `export_strategy_vs_buy_and_hold` to compare the
 `DoubleMovingAverageRSIStrategy` equity curve with a buy-and-hold BTC/USDT curve.
 Both curves start from 10,000 USDT by default. The chart is saved to
 `plots/backtest.png`, and the plotted data is exported to `plots/backtest.csv`.
+
+
+## Vectorbt backtest settings
+
+`VectorbtBacktestEngine` runs with 10,000 USDT initial cash, 0.04% commission,
+and 0.01% slippage by default. It passes the CCXT timeframe to vectorbt as the
+portfolio frequency so annualized metrics such as Sharpe, Calmar, Omega, and
+Sortino ratios can be computed without frequency warnings.

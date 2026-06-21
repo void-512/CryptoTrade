@@ -40,4 +40,5 @@ class CcxtMarketDataProvider(MarketDataProvider):
             columns=["timestamp", "open", "high", "low", "close", "volume"],
         )
         frame["timestamp"] = pd.to_datetime(frame["timestamp"], unit="ms", utc=True)
+        frame = frame.sort_values("timestamp").drop_duplicates("timestamp")
         return frame.set_index("timestamp")
