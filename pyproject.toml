@@ -1,0 +1,17 @@
+[project]
+name = "crypto-trade-bot"
+version = "0.1.0"
+description = "Clean architecture Python algorithmic trading project for Crypto.com."
+requires-python = ">=3.12"
+dependencies = [
+    "ccxt>=4.3.0",
+    "matplotlib>=3.8.0",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "vectorbt>=0.26.0",
+    "vnpy>=3.9.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["trading_bot/tests"]
