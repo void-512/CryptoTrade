@@ -11,7 +11,7 @@ class ExchangeConfig:
     exchange_id: str = "cryptocom"
     api_key: str | None = None
     api_secret: str | None = None
-    sandbox: bool = True
+    sandbox: bool = False
 
 
 @dataclass(frozen=True)

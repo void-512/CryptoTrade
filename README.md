@@ -60,3 +60,16 @@ Both curves start from 10,000 USDT by default. The chart is saved to
 and 0.01% slippage by default. It passes the CCXT timeframe to vectorbt as the
 portfolio frequency so annualized metrics such as Sharpe, Calmar, Omega, and
 Sortino ratios can be computed without frequency warnings.
+
+## CCXT candle retrieval
+
+`CcxtMarketDataProvider` requests candles with a `since` timestamp derived from
+the configured timeframe and limit instead of relying on an exchange default.
+If Crypto.com returns only one candle for an unsupported hourly timeframe such as
+`2h`, the provider fetches 1-hour candles and resamples them locally so the
+backtest has enough history for meaningful statistics and non-empty plots.
+
+The backtest engine now validates that enough candles are available for the
+strategy lookback before calling vectorbt. If CCXT returns only a single candle,
+the run fails with an actionable error instead of producing all-zero statistics
+and an empty chart.
