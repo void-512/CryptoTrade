@@ -23,8 +23,6 @@ backtest or live environment.
 python -m trading_bot.main backtest
 python -m trading_bot.main live
 ```
-<<<<<<< ours
-=======
 
 ## Historical data download
 
@@ -38,4 +36,3 @@ The downloader is reusable for any CCXT symbol and timeframe. It enables CCXT
 rate limiting, writes the required `timestamp,open,high,low,close,volume`
 columns, and resumes automatically by reading the latest timestamp already saved
 in the destination CSV.
->>>>>>> theirs
